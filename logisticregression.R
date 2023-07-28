@@ -1,4 +1,6 @@
 logisticregression <- function(table, labelcolumn, label1 , label2, featurecolumn){
+library(pROC)
+library(randomForest)
 table[,labelcolumn] <- gsub(label1,0,table[,labelcolumn])
 table[,labelcolumn] <- gsub(label2,1,table[,labelcolumn])
 plot(table[,featurecolumn],table[,labelcolumn])
